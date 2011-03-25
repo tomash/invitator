@@ -1,0 +1,16 @@
+development: &default
+  host: "localhost:3000"
+  smtp_settings:
+    from: "tomekrs@o2.pl"
+    address: "poczta.o2.pl"
+    port: 587
+    user_name: "tomekrs"
+    password: "xxxxxx"
+    authentication: "plain"
+    domain: "poczta.o2.pl"
+
+test:
+  <<: *default
+
+production:
+  <<: *default
