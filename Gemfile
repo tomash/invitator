@@ -36,6 +36,10 @@ gem 'mongrel'
 #   gem 'webrat'
 # end
 group :development, :test do
-  gem 'web-app-theme', '>= 0.6.2'
   gem 'factory_girl'
+  gem 'capybara'
+  gem 'haml-rails'
+  gem 'hpricot'
+  gem 'ruby_parser'
+  gem 'web-app-theme', '>= 0.6.2'
 end
