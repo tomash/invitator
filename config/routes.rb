@@ -2,6 +2,6 @@ Invitator::Application.routes.draw do
 
   devise_for :users
 
-  root :to => "profile#new"
+  root :to => "dashboards#show"
   resource :profile
 end
