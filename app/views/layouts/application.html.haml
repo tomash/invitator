@@ -13,7 +13,7 @@
         #user-navigation
           %ul.wat-cf
             %li
-              %a.logout{:href => "/logout"}= t("web-app-theme.logout", :default => "Logout")
+              = link_to "Logout", destroy_user_session_path, :class => "logout"
         #main-navigation
           %ul.wat-cf
             %li
