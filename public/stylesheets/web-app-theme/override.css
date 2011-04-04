@@ -2,3 +2,8 @@
 #error_explanation ul {
   padding-left: 30px;
 }
+
+.flash .error, .flash .alert {
+  border: 1px solid #ffbbbb;
+  background-color: #ffdddd;
+}
