@@ -17,4 +17,11 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates_length_of :password, :within => 3..50
   
+  after_create :create_empty_profile
+  
+  def create_stub_profile
+    p = Profile.new(:user => self)
+    p.save(false)
+  end
+  
 end
