@@ -1,0 +1,42 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", invitations_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_invitation_path
+      %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", invitation_path
+  .content
+    .inner
+      %p
+        %b
+          = t("activerecord.attributes.invitation.user_id", :default => t("activerecord.labels.user_id", :default => "User"))
+          \:
+        = @invitation.user_id
+      %p
+        %b
+          = t("activerecord.attributes.invitation.recipient_email", :default => t("activerecord.labels.recipient_email", :default => "Recipient email"))
+          \:
+        = @invitation.recipient_email
+      %p
+        %b
+          = t("activerecord.attributes.invitation.subject", :default => t("activerecord.labels.subject", :default => "Subject"))
+          \:
+        = @invitation.subject
+      %p
+        %b
+          = t("activerecord.attributes.invitation.content", :default => t("activerecord.labels.content", :default => "Content"))
+          \:
+        = @invitation.content
+      %p
+        %b
+          = t("activerecord.attributes.invitation.state", :default => t("activerecord.labels.state", :default => "State"))
+          \:
+        = @invitation.state
+      %p
+        %b
+          = t("activerecord.attributes.invitation.token", :default => t("activerecord.labels.token", :default => "Token"))
+          \:
+        = @invitation.token
+      .wat-cf
+        = link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_invitation_path(@invitation), :class => "button"
+        = link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), invitation_path(@invitation), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"
+- content_for :sidebar, render(:partial => 'sidebar')

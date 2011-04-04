@@ -4,4 +4,5 @@ Invitator::Application.routes.draw do
 
   root :to => "dashboards#show"
   resource :profile
+  resources :invitations
 end

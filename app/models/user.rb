@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   attr_accessible :login, :password, :password_confirmation, :remember_me
   
   has_one :profile
+  has_many :invitations
   
   validates_presence_of :login
   validates_uniqueness_of :login
