@@ -1,11 +1,15 @@
 .block
   .secondary-navigation
     %ul.wat-cf
-      %li.first= link_to "#{t("web-app-theme.list", :default => "List")}", profile_path
-      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_profile_path
+      %li.first= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_profile_path
       %li.active= link_to "#{t("web-app-theme.show", :default => "Show")}", profile_path
   .content
     .inner
+      %p
+        %b
+          = t("activerecord.attributes.profile.email", :default => t("activerecord.labels.email", :default => "E-mail"))
+          \:
+        = @profile.email
       %p
         %b
           = t("activerecord.attributes.profile.fullname", :default => t("activerecord.labels.fullname", :default => "Fullname"))

@@ -7,4 +7,5 @@ class Profile < ActiveRecord::Base
   validates :city, :presence => true
   validates :province, :presence => true
   validates :postal_code, :presence => true
+  validates :email, :presence => true
 end

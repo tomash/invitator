@@ -1,4 +1,8 @@
 .group
+  = f.label :email, t("activerecord.attributes.profile.email", :default => "E-mail"), :class => :label
+  = f.text_field :email, :class => 'text_field'
+  %span.description Ex: ceo@google.com
+.group
   = f.label :fullname, t("activerecord.attributes.profile.fullname", :default => "Fullname"), :class => :label
   = f.text_field :fullname, :class => 'text_field'
   %span.description Ex: Joe Sixpack
