@@ -7,3 +7,8 @@
   border: 1px solid #ffbbbb;
   background-color: #ffdddd;
 }
+
+form .group img.avatar {
+  display: block;
+  margin: 10px 0;
+}

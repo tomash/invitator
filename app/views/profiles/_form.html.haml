@@ -25,6 +25,7 @@
 .group
   = f.label :avatar, t("activerecord.attributes.profile.avatar", :default => "Avatar"), :class => :label
   = f.file_field :avatar
+  = image_tag @profile.avatar.url(:thumb), :class => 'avatar'
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")
