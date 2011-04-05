@@ -31,14 +31,6 @@ div.contentWrap {
   margin: auto;
 }
 
-#overlay input[type=text], #overlay input[type=password], #overlay input[type=file], #overlay textarea {
-  color: white;
-}
-
-#overlay input[type="submit"] {
-  margin: 0;
-}
-
 #overlay .formError {
   display: block;
   padding: 0;

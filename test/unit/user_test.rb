@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "should add an empty (invalid) profile after creation" do
+    @user = Factory(:user)
+    assert(!@user.profile.valid?)
   end
 end
