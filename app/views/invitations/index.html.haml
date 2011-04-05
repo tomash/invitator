@@ -6,30 +6,16 @@
         = link_to "New", new_invitation_path, :id => 'new_invitation', :rel => '#overlay'
   .content
     %h2.title
-      = t("web-app-theme.all", :default => "All")
-      Invitations
+      Sent Invitations
     .inner
-      %table.table
-        %tr
-          %th.first 
-            ID
-          %th
-            Recipient E-mail
-          %th= t("web-app-theme.created_at", :default => "Created at")
-          %th.last &nbsp;
-        - @invitations.each do |invitation|
-          %tr{:class => cycle("odd", "even")}
-            %td
-              = invitation.id
-            %td
-              = invitation.recipient_email
-            %td
-              = invitation.created_at
-            %td.last
-              = link_to "#{t("web-app-theme.show", :default => "Show")}", invitation_path(invitation)
-              |
-              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_invitation_path(invitation)} |
-              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", invitation_path(invitation), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
-      .actions-bar.wat-cf
-        .actions
+      = render 'table', :invitations => @invitations
+    %h2.title
+      Accepted Invitations
+    .inner
+      = render 'table', :invitations => @accepted_invitations
+    %h2.title
+      Declined Invitations
+    .inner
+      = render 'table', :invitations => @declined_invitations
+      
 - content_for :sidebar, render(:partial => 'sidebar')

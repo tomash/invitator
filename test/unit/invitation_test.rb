@@ -11,4 +11,11 @@ class InvitationTest < ActiveSupport::TestCase
       @invitation = Factory(:invitation, :recipient_email => 'd1@example.com,d2@example.com,d3@example.com')
     end
   end
+  
+  test "should send e-mail notification to addressate" do
+    assert_difference 'ActionMailer::Base.deliveries.count', +1 do
+      @invitation = Factory(:invitation, :recipient_email => 'bob@example.com')
+    end
+  end
+    
 end

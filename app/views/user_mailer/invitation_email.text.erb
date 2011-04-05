@@ -1,3 +1,7 @@
-ohai, <%= @invitation.recipient_email %>!
+Hello, <%= @invitation.recipient_email %>!
 
-dude <%= @invitation.user.login %> has invited you to try invitator!
+Invitator user <%= @invitation.user.login %> has invited you to try Invitator!
+To view the invitation (where you can accept or decline it), click the following link:
+<%= @invitation_url %>
+
+Invitator Team

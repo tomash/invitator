@@ -12,3 +12,15 @@ form .group img.avatar {
   display: block;
   margin: 10px 0;
 }
+
+.content.invitation .group.wat-cf div {
+  margin: 5px;
+}
+
+.content.invitation .group.wat-cf div.label {
+  font-style: italic;
+}
+
+.content.invitation .group.wat-cf div.subject {
+  font-weight: bold;
+}

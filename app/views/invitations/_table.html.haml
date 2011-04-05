@@ -1,0 +1,24 @@
+%table.table
+  %tr
+    %th.first 
+      ID
+    %th
+      Recipient E-mail
+    %th= t("web-app-theme.created_at", :default => "Created at")
+    %th= t("web-app-theme.state", :default => "State")
+    %th.last &nbsp;
+  - invitations.each do |invitation|
+    %tr{:class => cycle("odd", "even")}
+      %td
+        = invitation.id
+      %td
+        = invitation.recipient_email
+      %td
+        = invitation.created_at
+      %td
+        = invitation.state
+      %td.last
+        = link_to "#{t("web-app-theme.show", :default => "Show")}", invitation_path(invitation, :token => invitation.token)
+        |
+        \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", invitation_path(invitation), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+

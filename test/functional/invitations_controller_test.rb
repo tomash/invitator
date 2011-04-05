@@ -5,6 +5,7 @@ class InvitationsControllerTest < ActionController::TestCase
   
   def setup
     @user = Factory(:user, :login => 'joe')
+    @user.profile.update_attributes(Factory.attributes_for(:profile))
   end
 
   test "should get index" do

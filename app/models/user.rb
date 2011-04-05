@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   
   has_one :profile
   has_many :invitations
+  has_many :received_invitations, :class_name => "Invitation", :foreign_key => "acceptor_id"
   
   validates_presence_of :login
   validates_uniqueness_of :login

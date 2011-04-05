@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110404192457) do
+ActiveRecord::Schema.define(:version => 20110405152823) do
 
   create_table "invitations", :force => true do |t|
     t.integer  "user_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20110404192457) do
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "acceptor_id"
   end
 
   create_table "profiles", :force => true do |t|
