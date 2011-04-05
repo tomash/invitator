@@ -3,7 +3,7 @@
     %ul.wat-cf
       %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", invitations_path
       %li
-        = link_to "New", new_invitation_path, :id => 'new_invitation'
+        = link_to "New", new_invitation_path, :id => 'new_invitation', :rel => '#overlay'
   .content
     %h2.title
       = t("web-app-theme.all", :default => "All")

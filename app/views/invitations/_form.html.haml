@@ -1,7 +1,7 @@
 .group
-  = f.label :recipient_email, t("activerecord.attributes.invitation.recipient_email", :default => "Recipient email"), :class => :label
+  = f.label :recipient_email, t("activerecord.attributes.invitation.recipient_email", :default => "Recipient emails (comma-separated)"), :class => :label
   = f.text_field :recipient_email, :class => 'text_field'
-  %span.description Ex: a simple text
+  %span.description Ex: ceo@google.com, android@google.com, randomdev@google.com
 .group
   = f.label :subject, t("activerecord.attributes.invitation.subject", :default => "Subject"), :class => :label
   = f.text_field :subject, :class => 'text_field'

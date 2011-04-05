@@ -1,0 +1,49 @@
+#overlay {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  color:#efefef;
+  height:350px;
+  text-align: center;
+  display:none;
+  width:400px;		
+  padding:35px;
+  font-size: 11px;
+}
+
+div.contentWrap {
+  overflow:hidden;
+  padding: 4px;
+}
+
+#overlay .close {
+	background-image:url(/images/overlay/close.png);
+	position:absolute; right:5px; top:5px;
+	cursor:pointer;
+	height:35px;
+	width:35px;
+}
+
+#overlay label {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+#overlay input[type=text], #overlay input[type=password], #overlay input[type=file], #overlay textarea {
+  color: white;
+}
+
+#overlay input[type="submit"] {
+  margin: 0;
+}
+
+#overlay .formError {
+  display: block;
+  padding: 0;
+}
+
+#overlay textarea {
+  height: 60px;
+}

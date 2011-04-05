@@ -8,7 +8,7 @@ class InvitationsController < ApplicationController
   
   def new
     respond_to do |format|
-      # format.html # no html
+      format.html
       format.js do
         render :layout => false
       end
@@ -19,13 +19,18 @@ class InvitationsController < ApplicationController
     @invitation = current_user.invitations.new(params[:invitation])
     respond_to do |format|
       if @invitation.save
-        # format.html # no html
+        format.html { redirect_to invitations_path, :notice => 'success' }
         format.js   { render 'success' }
       else
-        # format.html # no html
+        format.html { redirect_to invitations_path, :notice => 'failure' }
         format.js   { render 'failure' }
       end
     end
+  end
+  
+  def destroy
+    @invitation.destroy
+    redirect_to invitations_path, :notice => 'deleted'
   end
   
   private
